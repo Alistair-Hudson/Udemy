@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c545ec1f2059ee4dbaf1dca2aeccc14, type: 3}
+  m_Name: StartingState
+  m_EditorClassIdentifier: 
+  storyText: "You wake up in a dark room.\r\nAs far as you can see the room is empty,
+    but for a table with a knife on top in the middle of the room.\r\n\r\nDo you grab
+    the knife?\r\n1. Yes\r\n2. No"
+  nextStates:
+  - {fileID: 11400000, guid: d779226176d26cd4b8f32da38c4d4caa, type: 2}
+  - {fileID: 11400000, guid: 1354e20e7a184b04aa7718844c9deb53, type: 2}

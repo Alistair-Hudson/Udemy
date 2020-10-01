@@ -1,0 +1,6 @@
+You wake up in a dark room.
+As far as you can see the room is empty, but for a table with a knife on top in the middle of the room.
+
+Do you grab the knife?
+1. Yes
+2. No

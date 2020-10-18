@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4930467560323307431}
   - component: {fileID: 4930467560323307429}
   - component: {fileID: 4930467560323307428}
+  - component: {fileID: 1529030469305648493}
   m_Layer: 0
   m_Name: BreakableBlock_2Hit
   m_TagString: Breakable
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.6666667, y: 0.6666667}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -123,8 +124,29 @@ MonoBehaviour:
   breakSound: {fileID: 8300000, guid: cfec1dd43474a37479740c75fd663161, type: 3}
   blockBreakVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
   vfxTime: 2
-  maxHits: 2
   hitSprites:
   - {fileID: 21300000, guid: a07f9217b299190428f8484dc8d71a1b, type: 3}
   - {fileID: 21300000, guid: f8cf0c1b63b8b1b46b64148ff0238c6d, type: 3}
+  points: 75
   timesHit: 0
+--- !u!50 &1529030469305648493
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4930467560323307424}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; // SceneMangager
 
 public class Block : MonoBehaviour
 {
@@ -9,11 +10,11 @@ public class Block : MonoBehaviour
     [SerializeField] AudioClip breakSound;
     [SerializeField] GameObject blockBreakVFX;
     [SerializeField] float vfxTime = 2f;
-    [SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites;
+    [SerializeField] int points = 50;
+    int maxHits;
 
     //Cached data
-    Level level;
     GameStatus gStatus;
 
     // State variables
@@ -23,17 +24,16 @@ public class Block : MonoBehaviour
     private void Start()
     {
         maxHits = hitSprites.Length;
-        level = FindObjectOfType<Level>();
-        if ("Breakable" == tag)
-        {
-            level.CountBreakableBlocks();
-        }
         gStatus = FindObjectOfType<GameStatus>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-         
+        if (collision.gameObject.GetComponent<Paddle>() || !gStatus.GetHasStarted())
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+        
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
         if ("Breakable" == tag)
         {
@@ -41,8 +41,7 @@ public class Block : MonoBehaviour
             if (0 >= maxHits)
             {
                 BreakVFX();
-                gStatus.AddPoints();
-                level.DecreaseBlocks();
+                gStatus.AddPoints(points);
                 Destroy(gameObject);
             }
             else

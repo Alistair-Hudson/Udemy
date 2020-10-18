@@ -26,7 +26,7 @@ public class Level : MonoBehaviour
         
         if (0 >= breakablBlocks)
         {
-            sceneLoader.LoadNextScene();
+            // sceneLoader.LoadNextScene();
         }
     }
 }

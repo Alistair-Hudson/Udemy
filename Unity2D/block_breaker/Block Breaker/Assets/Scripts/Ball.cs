@@ -14,11 +14,11 @@ public class Ball : MonoBehaviour
 
     // state
     Vector2 paddle2Ball;
-    bool hasStarted = false;
 
     // Cached Componets
     AudioSource myAudioSource;
     Rigidbody2D myRigidBody;
+    GameStatus gameStatus;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +26,13 @@ public class Ball : MonoBehaviour
         paddle2Ball = transform.position - paddle1.transform.position;
         myAudioSource = GetComponent<AudioSource>();
         myRigidBody = GetComponent<Rigidbody2D>();
+        gameStatus = FindObjectOfType<GameStatus>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hasStarted)
+        if (!gameStatus.GetHasStarted())
         {
             LockBAll2Paddle();
             LaunchBallOnMouseClick();
@@ -43,7 +44,7 @@ public class Ball : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             myRigidBody.velocity = new Vector2(velocityX, velocityY);
-            hasStarted = true;
+            gameStatus.SetHasStarted(true);
         }
     }
 
@@ -58,7 +59,7 @@ public class Ball : MonoBehaviour
     {
         Vector2 velocityTweak = new Vector2(UnityEngine.Random.Range(0f, randFactor), 
                                             UnityEngine.Random.Range(0f, randFactor));
-        if (hasStarted)
+        if (gameStatus.GetHasStarted())
         {
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             myAudioSource.PlayOneShot(clip);

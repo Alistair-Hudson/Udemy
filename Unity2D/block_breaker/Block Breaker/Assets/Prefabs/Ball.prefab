@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -140,6 +140,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 27a6d95bb69cf3c41a46cecbc2753a57, type: 3}
   - {fileID: 8300000, guid: 941ff4a10ea5f7b4ab1409e2926863a5, type: 3}
   - {fileID: 8300000, guid: e49b0ceb831b1ed419cb2acc7daeba14, type: 3}
+  randFactor: 0.2
 --- !u!82 &6725642820079453251
 AudioSource:
   m_ObjectHideFlags: 0

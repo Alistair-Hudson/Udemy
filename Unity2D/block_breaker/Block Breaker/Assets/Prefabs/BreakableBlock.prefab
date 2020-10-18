@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4930467560323307431}
   - component: {fileID: 4930467560323307429}
   - component: {fileID: 4930467560323307428}
+  - component: {fileID: 8955345154439972777}
   m_Layer: 0
   m_Name: BreakableBlock
   m_TagString: Breakable
@@ -127,3 +128,24 @@ MonoBehaviour:
   hitSprites:
   - {fileID: 21300000, guid: a07f9217b299190428f8484dc8d71a1b, type: 3}
   timesHit: 0
+--- !u!50 &8955345154439972777
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4930467560323307424}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

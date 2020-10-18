@@ -7,6 +7,13 @@ public class LoseCollider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("GameOverScene");
+        if (collision.gameObject.GetComponent<Ball>())
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+        else if (collision.gameObject.GetComponent<Block>())
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

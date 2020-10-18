@@ -14,6 +14,7 @@ public class GameStatus : MonoBehaviour
 
     // State Variables
     [SerializeField] int gameScore = 0;
+    bool hasStarted = false;
 
     // Create Singleton of Game Status to retain score between levels
     private void Awake()
@@ -44,9 +45,14 @@ public class GameStatus : MonoBehaviour
 
     }
 
-    public void AddPoints(int points = 83)// Base Points per block
+    public void AddPoints(int points = 50)// Base Points per block
     {
         gameScore += points;
+    }
+
+    public int GetScore()
+    {
+        return gameScore;
     }
 
     public void ResetScore()
@@ -57,5 +63,15 @@ public class GameStatus : MonoBehaviour
     public bool IsAutoPlay()
     {
         return isAutoPlay;
+    }
+
+    public bool GetHasStarted()
+    {
+        return hasStarted;
+    }
+
+    public void SetHasStarted(bool state)
+    {
+        hasStarted = state;
     }
 }

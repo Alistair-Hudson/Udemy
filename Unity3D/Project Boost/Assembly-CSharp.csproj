@@ -61,6 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\Package.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

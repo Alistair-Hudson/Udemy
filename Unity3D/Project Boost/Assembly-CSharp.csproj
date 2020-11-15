@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Compile Include="Assets\Scripts\Package.cs" />
+    <Compile Include="Assets\Scripts\Oscillator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -9,6 +9,16 @@ public class Rocket : MonoBehaviour
     [SerializeField] float thrusterSpeed = 5f;
     [SerializeField] float rotationalSpeed = 5f;
 
+    //Audio
+    [SerializeField] AudioClip thrusterAudio;
+    [SerializeField] AudioClip explossionAudio;
+    [SerializeField] AudioClip winAudio;
+
+    //Particle
+    [SerializeField] ParticleSystem thrusterParticles;
+    [SerializeField] ParticleSystem explossionParticles;
+    [SerializeField] ParticleSystem winParticles;
+
     bool hasPackage = false;
 
     Rigidbody rigidbody;
@@ -70,8 +80,9 @@ public class Rocket : MonoBehaviour
             rigidbody.AddRelativeForce(Vector3.up * thrusterSpeed * Time.deltaTime);
             if (!audioSource.isPlaying)// avoid audio layering
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(thrusterAudio);
             }
+            thrusterParticles.Play();
         }
         else
         {
@@ -86,15 +97,34 @@ public class Rocket : MonoBehaviour
             case "Friendly":
                 if (hasPackage)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+                    StartCoroutine(LoadLevelDelay(SceneManager.GetActiveScene().buildIndex +1));
                 }
                 break;
             case "Package":
+                audioSource.PlayOneShot(winAudio);
                 hasPackage = true;
                 break;
             default:
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                StartCoroutine(LoadLevelDelay(SceneManager.GetActiveScene().buildIndex));
                 break;
+        }
+
+        IEnumerator LoadLevelDelay(int index)
+        {
+            audioSource.Stop();
+            if (index != SceneManager.GetActiveScene().buildIndex)
+            {
+                audioSource.PlayOneShot(winAudio);
+                winParticles.Play();
+            }
+            else
+            {
+                audioSource.PlayOneShot(explossionAudio);
+                explossionParticles.Play();
+            }
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene(index);
+
         }
     }
 }

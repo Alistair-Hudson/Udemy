@@ -6,17 +6,19 @@ using UnityEngine.SceneManagement;
 public class MusicPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        StartCoroutine(LoadScene());  
+        if (1 < FindObjectsOfType<MusicPlayer>().Length)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
-    IEnumerator LoadScene()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(1);
-    }
 
   
 }

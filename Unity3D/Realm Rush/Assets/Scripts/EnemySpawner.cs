@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] EnemyMovement enemy;
     [SerializeField] float spawnDelay = 1f;
+    [SerializeField] AudioClip spawnSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             var newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-            
+            newEnemy.transform.parent = transform;
+            GetComponent<AudioSource>().PlayOneShot(spawnSFX);
             yield return new WaitForSeconds(spawnDelay);
         }
     }

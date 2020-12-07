@@ -3784,7 +3784,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minKillSpeed: 0
-    maxKillSpeed: 10000
+    maxKillSpeed: 1000
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
@@ -4858,7 +4858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 3350547495799288524}
-  targetEnemy: {fileID: 0}
   attackRange: 2
 --- !u!1001 &3346486179593473897
 PrefabInstance:

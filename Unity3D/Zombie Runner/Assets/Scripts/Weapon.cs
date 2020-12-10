@@ -6,32 +6,42 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] Camera fpCamera;
-    [SerializeField] float range = 100f;
-    [SerializeField] float damage = 25f;
     [SerializeField] ParticleSystem muzzelFlash;
     [SerializeField] GameObject impactVFX;
+    [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
+    [SerializeField] float range = 100f;
+    [SerializeField] float damage = 25f;
+    [SerializeField] float shotDelay = 1f;
 
+    bool canShoot = true;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
-            Shoot();
+            StartCoroutine(Shoot());
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
-        PlayMuzzleFlash();
-        ProcessBullet();
+        canShoot = false;
+        if (0 < ammoSlot.GetAmmoAmount(ammoType))
+        {
+            ammoSlot.ReduceAmmo(ammoType);
+            PlayMuzzleFlash();
+            ProcessBullet();
+        }
 
+        yield return new WaitForSeconds(shotDelay);
+        canShoot = true;
     }
 
     private void PlayMuzzleFlash()

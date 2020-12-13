@@ -9,9 +9,25 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        StartCoroutine(ShowHit());
         if (0 >= health)
         {
             GetComponent<DeathHandler>().HandleDeath();
         }
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    IEnumerator ShowHit()
+    {
+        DisplayDamage displayDamage = FindObjectOfType<DisplayDamage>();
+        displayDamage.ShowSplatter(true);
+        yield return new WaitForSeconds(1f);
+        displayDamage.ShowSplatter(false);
+
+
     }
 }

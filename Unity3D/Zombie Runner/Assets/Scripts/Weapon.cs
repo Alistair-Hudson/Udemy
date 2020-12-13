@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     private void OnEnable()
     {
         canShoot = true;
+        ammoSlot.SetActiveAmmo(ammoType);
     }
 
     // Update is called once per frame

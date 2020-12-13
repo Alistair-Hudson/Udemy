@@ -5,12 +5,24 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     [SerializeField] AmmoSlot[] ammoSlots;
+    AmmoType activeAmmo;
+
 
     [System.Serializable]
     private class AmmoSlot
     {
         public AmmoType ammoType;
         public int ammoAmount;
+    }
+
+    public void SetActiveAmmo(AmmoType ammoType)
+    {
+        activeAmmo = ammoType;
+    }
+
+    public AmmoType GetActiveAmmo()
+    {
+        return activeAmmo;
     }
 
     public int GetAmmoAmount(AmmoType ammoType)

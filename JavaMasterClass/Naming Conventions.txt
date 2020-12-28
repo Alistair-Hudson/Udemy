@@ -1,0 +1,38 @@
+Packages
+>Always lower case
+>Unique
+>Use domain name, reversed as a prefix for the name
+    invalid characters use _
+    use and _ if name starts with a number
+    starts with a keyword use _
+
+Class, Inteferace
+>Use CamelCase
+>Should be nouns
+>Start with Capitals
+>Each new Word should be Capitalized
+
+Methods
+>mixedCase
+>should be verbs
+>reflect what it does or returns
+
+Constants
+>ALL UPPER_CASE
+>words separated with _
+>Declared using the final keyword
+
+Variables
+>mixedCase
+>meaningful
+>start with lowercase
+>do not use _
+
+Type Paramters
+>single capital letter
+    E - element
+    K - key
+    T - Type
+    V - value
+
+

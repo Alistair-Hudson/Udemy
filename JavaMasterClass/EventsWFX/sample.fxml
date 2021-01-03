@@ -1,0 +1,15 @@
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane fx:controller="sample.contoller"
+            xmnls fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <TextFeild fx:id="namefeild" GridPane.rowIndex="0" GridPane.columnIndex="0"
+        onKeyRelease="#handleKeyRelease"/>
+    <Button fx:id="helloButton" text="say hello" GridPane.rowIndex="1" GridPane.columnIndex="0"
+        onAction="#onButtonClicked"/>
+    <Button fx:id="byeButton" text="say bye" GridPane.rowIndex="1" GridPane.columnIndex="1"
+        onAction="#onButtonClicked"/>
+    <CheckBox fx:id="ourCheckBox" text="clear the field after speaking" 
+        GridPane.rowIndex="2" GridPane.columnIndex="0"
+        onAction="#handleChange"/>
+
+</GridPane>

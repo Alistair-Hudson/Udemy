@@ -5,6 +5,7 @@ Packages
     invalid characters use _
     use and _ if name starts with a number
     starts with a keyword use _
+> com.example and org.example are reserved for packages that are not to be shipped
 
 Class, Inteferace
 >Use CamelCase
@@ -34,5 +35,3 @@ Type Paramters
     K - key
     T - Type
     V - value
-
-

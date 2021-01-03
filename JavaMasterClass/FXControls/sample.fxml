@@ -1,0 +1,92 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?impost javafx.scene.control.CheckBox?>
+<GridPane fx:controller="sample.Controller"
+            xmlns: fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Button GridPane.rowIndex="0"
+            GridPane.columnIndex="0"
+            text="click me">
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/TipOfTheDay24.gif"/>
+            </ImageView>
+        </graphic>
+    </Button>
+    <Label GridPane.rowIndex="0" GridPane.columnIndex="1" text="this is a label" WrapText="true">
+        <graphic>
+            <ImageView>
+                <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
+            </ImageView>
+        </graphic>
+    </Label>
+
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="2" text="Red" ToggleGroup="$colorToggleGroup"/>
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="3" text="Blue" ToggleGroup="$colorToggleGroup" selected="true"/>
+    <RadioButton GridPane.rowIndex="0" GridPane.columnIndex="4" text="Green" ToggleGroup="$colorToggleGroup"/>
+
+    <CheckBox text="Subscribe" GridPane.rowIndex="1"/>
+        <!-- indetermint="true"/> can use but advised not to-->
+    <ToggleButton text="This is a toggled button"/>
+    <TextField GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <PasswrodField GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    <ComboBox GridPane.rowIndex="2" editable="true">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="option 1"/>
+                <String fx:value="option 2"/>
+                <String fx:value="option 3"/>
+                <String fx:value="option 4"/>
+                <String fx:value="option 5"/>
+            </FXCollections>
+        </items>
+        <!-- <value>
+            <String fx:value="this is a default state"/>
+        </value> only works if not editable-->
+    </ComboBox>
+    <ChoiceBox GridPane.rowIndex="2" GridPane.columnIndex="1">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="cb 1"/>
+                <String fx:value="cb 2"/>
+                <String fx:value="cb 3"/>
+                <String fx:value="cb 4"/>
+                <String fx:value="cb 5"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <Slider GridPane.rowIndex="3" min="0" max="100"
+        showTickLabel="true" showTickMarks="true"  minorTickCount="4" snapToTicks="true"/>
+    <Spinner GridPane.rowIndex="3" GridPane.columnIndex="1" min="0" max="100"
+        editable="true" initialValue="50"/>
+    <ColorPicker GridPane.rowIndex="4"/>
+    <DatePicker GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    <Accordion GridPane.rowIndex="4" GridPane.columnIndex="2" GridPane.columnSpan="2"
+        expandedPane="$tp3">
+        <panes>
+            <TitlePane text="A title pane" GridPane.rowIndex="4" GridPane.columnIndex="2">
+                <Label text="1 INside the pane"/>
+            </TitlePane>
+            <TitlePane text="A title pane" GridPane.rowIndex="4" GridPane.columnIndex="2">
+                <Label text="2 INside the pane"/>
+            </TitlePane>
+            <TitlePane fx:id="tp3" text="A title pane" GridPane.rowIndex="4" GridPane.columnIndex="2">
+                <Label text="3 INside the pane"/>
+            </TitlePane>
+        </panes>
+    </Accordion>
+
+
+
+</GridPane>

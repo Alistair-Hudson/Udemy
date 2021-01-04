@@ -1,3 +1,5 @@
+package Basics;
+
 public class BoolChar {
     
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package Basics;
+
 public class ParsingString {
 
     public static void main(String[] args) {

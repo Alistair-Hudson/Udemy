@@ -1,4 +1,4 @@
-//package academy.learnprogramming;
+package Basics;
 
 public class ByteShortIntLong {
     

@@ -1,0 +1,11 @@
+/* for all buttons */
+.button {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+
+/* for one button */
+#buttonThree {
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+}

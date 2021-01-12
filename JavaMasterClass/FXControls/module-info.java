@@ -1,7 +1,7 @@
-module FXControls {
+// module FXControls {
     
-    requires javafx.fxml;
-    requires javafx.controls;
+//     requires javafx.fxml;
+//     requires javafx.controls;
 
-    opens sample;
-}
+//     opens sample;
+// }

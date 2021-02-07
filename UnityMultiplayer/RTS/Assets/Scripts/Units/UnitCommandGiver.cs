@@ -1,0 +1,77 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class UnitCommandGiver : MonoBehaviour
+{
+    [SerializeField] UnitSelectionHandler UnitSelectionHandler = null;
+    [SerializeField] LayerMask layerMask;
+
+    Camera mainCamera;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        mainCamera = Camera.main;
+        GameOverHandler.ClientOnGameOver += ClientHandleGameOver;
+    }
+
+    private void OnDestroy()
+    {
+        GameOverHandler.ClientOnGameOver -= ClientHandleGameOver;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            return;
+        }
+
+        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+        if(!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+        {
+            return;
+        }
+
+        if(hit.collider.TryGetComponent<Targetable>(out Targetable target))
+        {
+            if (target.hasAuthority)
+            {
+                TryMove(hit.point);
+                return;
+            }
+            TryTarget(target);
+            return;
+        }
+
+        TryMove(hit.point);
+    }
+
+    private void TryTarget(Targetable target)
+    {
+        foreach(Unit unit in UnitSelectionHandler.selectedUnits)
+        {
+            unit.GetTargeter().CmdSetTarget(target.gameObject);
+        }
+        
+    }
+
+    private void TryMove(Vector3 point)
+    {
+
+        foreach (Unit unit in UnitSelectionHandler.selectedUnits)
+        {
+            unit.GetUnitMovement().CmdMove(point);
+        }
+    }
+
+    void ClientHandleGameOver(string winnerName)
+    {
+        enabled = false;
+    }
+}

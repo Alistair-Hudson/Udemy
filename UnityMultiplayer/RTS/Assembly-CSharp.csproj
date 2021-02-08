@@ -66,19 +66,22 @@
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
     <Compile Include="Assets\Scripts\Units\UnitSelectionHandler.cs" />
     <Compile Include="Assets\Scripts\Units\UnitMovement.cs" />
+    <Compile Include="Assets\Scripts\Cameras\FaceCamera.cs" />
     <Compile Include="Assets\Scripts\Combat\Targetable.cs" />
     <Compile Include="Assets\Scripts\Menus\GameOverDisplay.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
     <Compile Include="Assets\Scripts\Units\UnitFiring.cs" />
     <Compile Include="Assets\Scripts\Buildings\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\Networking\RTSPlayer.cs" />
+    <Compile Include="Assets\Scripts\Buildings\Building.cs" />
     <Compile Include="Assets\Scripts\Combat\Targeter.cs" />
     <Compile Include="Assets\Scripts\Buildings\GameOverHandler.cs" />
+    <Compile Include="Assets\Scripts\Buildings\BuildingButton.cs" />
     <Compile Include="Assets\Scripts\Units\UnitProjectile.cs" />
     <Compile Include="Assets\Scripts\Units\UnitCommandGiver.cs" />
-    <Compile Include="Assets\Scripts\Cameras\FaceCamera.cs" />
-    <Compile Include="Assets\Scripts\Buildings\Building.cs" />
-    <Compile Include="Assets\Scripts\Buildings\BuildingButton.cs" />
+    <Compile Include="Assets\Scripts\Menus\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Menus\JoinLobbyMenu.cs" />
+    <Compile Include="Assets\Scripts\Menus\LobbyMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -832,6 +835,18 @@
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{670660D8-CE79-2A68-8E32-C68576462661}</Project>
       <Name>Mirror.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
+      <Project>{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}</Project>
+      <Name>Mirror.Examples.Cloud.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.csproj">
+      <Project>{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}</Project>
+      <Name>Mirror.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
+      <Project>{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}</Project>
+      <Name>Mirror.Examples.Cloud.Pong</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

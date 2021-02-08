@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kcp2k", "kcp2k.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Authenticators", "Mirror.Authenticators.csproj", "{1A84A970-AB9F-7803-0280-BF2E4BDA0C38}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples", "Mirror.Examples.csproj", "{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples.Cloud.Pong", "Mirror.Examples.Cloud.Pong.csproj", "{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples.Cloud.GUI", "Mirror.Examples.Cloud.GUI.csproj", "{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Weaver", "Mirror.Weaver.csproj", "{BE7B4399-0094-60E1-8142-EF7FA049DCB0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Editor", "Mirror.Editor.csproj", "{6C8CAC7D-136F-CBE2-BEEC-6AA6F54CE3DB}"
@@ -61,6 +67,18 @@ Global
 		{1A84A970-AB9F-7803-0280-BF2E4BDA0C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A84A970-AB9F-7803-0280-BF2E4BDA0C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A84A970-AB9F-7803-0280-BF2E4BDA0C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D51589-FD24-3C6F-ACA2-F3F5405C89C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B771FF7-461D-2A78-5B79-7DC46D9FB2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BC2D0DC-5EA3-F401-D1E4-1FE0867F8A4A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE7B4399-0094-60E1-8142-EF7FA049DCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE7B4399-0094-60E1-8142-EF7FA049DCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7B4399-0094-60E1-8142-EF7FA049DCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
